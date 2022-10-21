@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PersonAccount</title>
+    </head>
+<body>
+    <h2>JavaScript Class Method</h2>
+    <h1>Get Last Account Expenses</h1>
+
+    <p id="demo"></p>
+    <h1>Get account balance</h1>
+
+    <h3>Total Income - Total Expense</h3>
+    <p id="bal"></p>
+
+    <h1>Get Last Account Income</h1>
+    <p id="inc"></p>
+
+    <script>
+        class PersonAccount {
+            constructor(firstName, lastName, incomes, expensesProperties, totalIncome, totalExpense, income) {
+                this.firstName = firstName
+                this.lastName = lastName
+                this.incomes = incomes
+                this.expensesProperties = expensesProperties
+                this.totalIncome = totalIncome
+                this.totalExpense = totalExpense
+            }
+
+            expense() {
+                console.log(this.incomes)
+                return this.incomes
+            }
+            accountBalance() {
+                console.log(this.totalIncome - this.totalExpense)
+                return (this.totalIncome - this.totalExpense)
+            }
+            income() {
+                console.log(this.incomes)
+                return (this.incomes)
+            }
+        }
+
+        let q1 = new PersonAccount(
+            "Mr",
+            "Marks",
+            [
+                { description: "001", descriptionProperties: "abcccccc" },
+                { description: "002", descriptionProperties: "efgggggg" },
+            ],
+            [
+                { expense: "600", descriptionProperties: "abcccccc" },
+                { expense: "700", descriptionProperties: "efgggggg" },
+            ],
+            20000,
+            10000)
+
+        let bal = q1.accountBalance();
+        let inc = q1.income();
+        let exp = q1.expense();
+
+        document.getElementById("demo").innerHTML =
+            "Description: " + exp[0].description + ",\nProperties: " + exp[0].descriptionProperties;
+        document.getElementById("bal").innerHTML =
+            "Total balance in account => " + bal
+        document.getElementById("inc").innerHTML =
+            "Description: " + inc[0].description + ",\nProperties: " + inc[0].descriptionProperties;
+    </script>
+</body>
+</html>

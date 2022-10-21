@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>JavaScript Class Method</h2>
+    <h1>Message 1</h1>
+
+    <p id="demo"></p>
+
+    <h1>Message 2</h1>
+    <p id="bal"></p>
+
+
+    <script>
+       
+// Create an automobile class. The class will have name, model, color, type: automatic or manual properties and create different methods e-g: start() logs car is ready for drive, opendoor() logs door is open
+// Create child classes of Automobile Car, Truck, Bus these classes also have extra information like doors property, maxspeed.
+
+class Automobile {
+    constructor (name, model, color, type) {
+        this.name = name;
+        this.model = model;
+        this.color = color;
+        this.type = type;
+    }
+    
+    start () {
+        console.log("Car is ready to drive")
+        return "Car is ready to drive"
+    }
+    openDoor () {
+        console.log("Door is open")
+        return "Door is open"
+    }
+
+}
+
+let car = new Automobile("Corolla", 2020, "Red", "Mannual")
+
+car.start()
+car.openDoor()
+
+document.getElementById("demo").innerHTML =
+car.start();
+document.getElementById("bal").innerHTML =
+car.openDoor();
+    </script>
+</body>
+</html>
